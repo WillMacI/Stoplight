@@ -17,6 +17,8 @@ function draw() {
 light();
 }
 function light(){
+        textSize(10);
+
     noStroke();
     fill(20,20,20);
     if(redTime > 1 && redLight === true){
@@ -58,6 +60,27 @@ fill(255, 229, 0);
         
     }
     text(yellowTime, 10, 60)
+    fill(0);
+    rect(90, 150, 100,100);
+        rect(90, 300, 100,100);
+
+    fill(255);
+    textSize(100);
+    if(redLight == true){
+            text("⇏", 100, 220);
+
+    }
+    if(greenLight == true){
+        text("⇑", 100, 400);
+
+    }
+    var yellowCrossing = round(yellowTime);
+    if(yellowLight == true){
+        text(yellowCrossing, 100, 400);
+
+    }
+        textSize(10);
+
 }
 function timerStartRed(){
     redTime -= speed;
@@ -65,7 +88,7 @@ function timerStartRed(){
 
 }
 function timerStartYellow(){
-     yellowTime -= speed;
+     yellowTime -= 0.01;
 }
 function timerStartGreen(){
         greetTime -= speed;
