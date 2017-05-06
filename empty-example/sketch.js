@@ -17,31 +17,43 @@ function draw() {
 light();
 }
 function light(){
+    fill(243, 208, 64);
+        rect(470,70,260,650)
+
         textSize(10);
 
-    noStroke();
+    strokeWeight(20);
+
     fill(20,20,20);
+                        fill(255,0,0,70);
     if(redTime > 1 && redLight === true){
                 fill(255,0,0);
-    rect(520, 120, 150,150, 50);
         timerStartRed();
         yellowTime = 20;
 
     }
+
+
+        rect(520, 120, 150,150, 100);
+fill(255, 229, 0,70);
+
     if(yellowTime > 1 && yellowLight === true){
 
 fill(255, 229, 0);
-        rect(520, 320, 150,150, 50);
         timerStartYellow();
         greetTime = 100;
     }
+            rect(520, 320, 150,150, 100);
+            fill(93, 255, 0,70);
+
     if(greetTime > 1 && greenLight === true){
             fill(93, 255, 0);
-        rect(520, 520, 150,150, 50);
         timerStartGreen();
         redTime =100;
 
     }
+            rect(520, 520, 150,150, 100);
+
     text(redTime, 10,10);
     text(greetTime, 10, 30);
     if(redTime < 1){
@@ -80,7 +92,6 @@ fill(255, 229, 0);
 
     }
         textSize(10);
-
 }
 function timerStartRed(){
     redTime -= speed;
