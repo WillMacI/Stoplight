@@ -1,10 +1,11 @@
-var redTime = 100;
+var redTime = 40;
 var redLight = true;
 var greenLight = false;
 var yellowLight = false;
 var speed = 0.1;
-var yellowTime = 20;
-var greetTime = 100;
+var yellowTime = 5;
+var greetTime = 40;
+var countdownTimer = 0;
 function setup() {
     createCanvas(1440,900);
 }
@@ -29,7 +30,7 @@ function light(){
     if(redTime > 1 && redLight === true){
                 fill(255,0,0);
         timerStartRed();
-        yellowTime = 20;
+        yellowTime = 5;
 
     }
 
@@ -79,16 +80,11 @@ fill(255, 229, 0);
     fill(255);
     textSize(100);
     if(redLight == true){
-            text("⇏", 100, 220);
+            text("✋", 100, 220);
 
     }
     if(greenLight == true){
-        text("⇑", 100, 400);
-
-    }
-    var yellowCrossing = round(yellowTime);
-    if(yellowLight == true){
-        text(yellowCrossing, 100, 400);
+        text("🏃🏿", 100, 400);
 
     }
         textSize(10);
@@ -99,7 +95,7 @@ function timerStartRed(){
 
 }
 function timerStartYellow(){
-     yellowTime -= 0.01;
+     yellowTime -= 0.09;
 }
 function timerStartGreen(){
         greetTime -= speed;
